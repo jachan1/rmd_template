@@ -1,0 +1,40 @@
+---
+title: "Title"
+output: 
+  html_document: 
+    css: https://raw.githubusercontent.com/jachan1/rmarkdown_css/master/markdown1.css
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F)
+
+pckgs <- c("haven", "dplyr", "ggplot2", "tidyr", "nlme")
+sapply(pckgs, function(pck){
+  ## need to run package installs below before knitting
+  if(!require(pck, character.only = T, quietly = T)) install.packages(pck)
+  require(pck, character.only = T, quietly = T)
+})
+if(!require(repFxns, quietly=T)) devtools::install_github("jachan1/repFxns")
+require(repFxns)
+
+
+```
+
+# Page 1
+
+## plot
+
+```{r}
+
+```
+
+## table
+
+```{r, results="asis"}
+
+```
+
+<p style="page-break-before: always">
+
+# page 2
